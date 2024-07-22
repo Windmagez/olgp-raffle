@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Raffle Ticket Purchase</title>
+    <script>
+        function calculateTotal() {
+            var ticketPrice = 10; // Fixed ticket price
+            var numberOfTickets = document.getElementById("ticketQuantity").value;
+            var totalAmount = ticketPrice * numberOfTickets;
+            document.getElementById("totalAmount").innerText = "Total Amount: PHP " + totalAmount;
+        }
+    </script>
+</head>
+<body>
+    <h2>Raffle Ticket Purchase</h2>
+    <form id="ticketForm">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="ticketQuantity">How many tickets do you want to buy?</label>
+        <input type="number" id="ticketQuantity" name="ticketQuantity" oninput="calculateTotal()" required><br><br>
+
+        <p id="totalAmount">Total Amount: PHP 0</p><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
